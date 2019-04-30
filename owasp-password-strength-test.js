@@ -1,6 +1,6 @@
 /* globals define */
 (function (root, factory) {
-  
+
   if (typeof define === 'function' && define.amd) {
     define([], factory);
   } else if (typeof exports === 'object') {
@@ -42,21 +42,21 @@
         // enforce a minimum length
         function(password) {
           if (password.length < owasp.configs.minLength) {
-            return 'The password must be at least ' + owasp.configs.minLength + ' characters long.';
+            return 'Die wagwoord moet ten minste ' + owasp.configs.minLength + ' karakters bevat.';
           }
         },
 
         // enforce a maximum length
         function(password) {
           if (password.length > owasp.configs.maxLength) {
-            return 'The password must be fewer than ' + owasp.configs.maxLength + ' characters.';
+            return 'Die wagwoord moet minder as ' + owasp.configs.maxLength + ' karakters bevat.';
           }
         },
 
         // forbid repeating characters
         function(password) {
           if (/(.)\1{2,}/.test(password)) {
-            return 'The password may not contain sequences of three or more repeated characters.';
+            return 'Die wagwoord mag nie reekse van drie of meer herhaalde karakters bevat nie.';
           }
         },
 
@@ -76,28 +76,28 @@
         // require at least one lowercase letter
         function(password) {
           if (!/[a-z]/.test(password)) {
-            return 'The password must contain at least one lowercase letter.';
+            return 'Die wagwoord moet ten minste een kleinletter bevat.';
           }
         },
 
         // require at least one uppercase letter
         function(password) {
           if (!/[A-Z]/.test(password)) {
-            return 'The password must contain at least one uppercase letter.';
+            return 'Die wagwoord moet ten minste een hoofletter bevat.';
           }
         },
 
         // require at least one number
         function(password) {
           if (!/[0-9]/.test(password)) {
-            return 'The password must contain at least one number.';
+            return 'Die wagwoord moet ten minste een syfer bevat.';
           }
         },
 
         // require at least one special character
         function(password) {
           if (!/[^A-Za-z0-9]/.test(password)) {
-            return 'The password must contain at least one special character.';
+            return 'Die wagwoord moet ten minste een spesiale karakter bevat.';
           }
         },
 
